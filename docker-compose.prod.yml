@@ -85,7 +85,6 @@ services:
     # No host port — Postgres is reachable only on the internal network.
     volumes:
       - postgres_data:/var/lib/postgresql
-      - ./docker/postgres/init-pgcron.sql:/docker-entrypoint-initdb.d/init-pgcron.sql
     # pg_cron is preloaded for existing volumes; the `analytics` queue runs on
     # the app job tier, not through pg_cron. Do not drop the preload: that is a
     # self-host image change with upgrade-path risk for those volumes.
